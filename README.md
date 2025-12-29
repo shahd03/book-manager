@@ -30,22 +30,11 @@ python -m venv venv
 ```bash
 pip install -r requirements.txt
 ```
-### **4. Configure the Database:**
-The application uses a .env file for configuration (like the database location), which is not included in the git repository for security.
-
-You can copy the provided example file to create your own configuration:
-
-```bash
-copy .env.example .env #On Windows
-cp .env.example .env #On macOS/Linux
-```
-Edit the new .env file. The default setting will create a database file called books.db inside a data/ folder in the project root. You typically do not need to change this.
-
-### **5. Initialize the Database:**
+### **4. Initialize the Database:**
 ```bash
 python main.py --init
 ```
-### **6. Start the Application:**
+### **5. Start the Application:**
 ```bash
 python main.py
 ```
@@ -62,5 +51,5 @@ Once running, you can choose from these options:
 7. **Generate reading report**: export reading statistics by genre
 8. **Exit**: close the application
 
-## **📄 License**
+## **License**
 This project is for educational purposes as part of the VIVES University of Applied Sciences assignment.
