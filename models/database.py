@@ -1,15 +1,14 @@
 import sqlite3
 import os
-from config.settings import settings
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_connection():
-    """Get a database connection"""
-    # Ensure data directory exists
-    os.makedirs("data", exist_ok=True)
-    return sqlite3.connect(settings.DATABASE_URL.replace("sqlite:///", ""))
-
-def init_db():
-    """Initialize database with tables"""
+    db_path = os.getenv('DATABASE_URL', 'books.db')
+    return sqlite3.connect(db_path)
+def init_database():
+    """Initialize the database with tables"""
     conn = get_connection()
     cursor = conn.cursor()
     
@@ -26,7 +25,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS books (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
-            author_id INTEGER,
+            author_id INTEGER NOT NULL,
             genre TEXT,
             status TEXT DEFAULT 'unread',
             date_added TEXT,
@@ -36,4 +35,4 @@ def init_db():
     
     conn.commit()
     conn.close()
-    print("Database initialized successfully!")
+    print("Database tables created successfully!")
