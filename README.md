@@ -47,9 +47,8 @@ Once running, you can choose from these options:
 3. **Search books**: filter by author, genre, or reading status
 4. **Update book status**: mark as read/reading/unread
 5. **View statistics**: see reading progress and collection insights
-6. **Generate collection report**: export all books to CSV/Excel
-7. **Generate reading report**: export reading statistics by genre
-8. **Exit**: close the application
+6. **Generate report**: export reading statistics to CSV/Excel
+7. **Exit**: close the application
 
 ## **License**
 This project is for educational purposes as part of the VIVES University of Applied Sciences assignment.
